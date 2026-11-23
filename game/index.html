@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember Pact — Duel of the Four Suits</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <!-- Title screen -->
+  <section id="title-screen" class="screen active">
+    <div class="title-inner">
+      <div class="title-glyphs"><span class="g ember">◆</span><span class="g tide">≈</span><span class="g thorn">✿</span><span class="g star">✦</span></div>
+      <h1>Ember Pact</h1>
+      <p class="subtitle">A duel of the four suits — Ember, Tide, Thorn and Star</p>
+      <p class="rules">You and the Ashen Warden hold 30 life each. Spend embers to play cards:
+        strike, guard, mend, or siphon. Your embers grow by one every turn.
+        Reduce the Warden to 0 life before he does the same to you.</p>
+      <button id="start-btn" class="big-btn">Begin the Duel</button>
+      <p class="keys">Click a card or press 1–7 to play it · Space ends your turn</p>
+    </div>
+  </section>
+
+  <!-- Table screen -->
+  <section id="table-screen" class="screen">
+    <div class="table">
+      <div class="foe-row">
+        <div class="portrait foe-portrait">👤</div>
+        <div class="foe-info">
+          <div class="name-row"><span id="foe-name">The Ashen Warden</span><span id="foe-hand-count"></span></div>
+          <div id="foe-hp"></div>
+          <div id="foe-block" class="block-line"></div>
+          <div id="foe-intent" class="intent"></div>
+        </div>
+        <div id="foe-hand" class="mini-hand"></div>
+      </div>
+
+      <div class="mid-row">
+        <div id="log" class="log"></div>
+        <div class="mid-side">
+          <div id="turn-label" class="turn-label">Turn 1</div>
+          <div id="score-label" class="score-label">Damage dealt: 0</div>
+        </div>
+      </div>
+
+      <div class="you-row">
+        <div class="portrait you-portrait">🧑</div>
+        <div class="you-info">
+          <div class="name-row"><span>You — the Pactbearer</span></div>
+          <div id="you-hp"></div>
+          <div id="you-block" class="block-line"></div>
+          <div class="mana-row"><span id="mana" class="mana"></span><span id="mana-text"></span></div>
+        </div>
+        <button id="end-turn" class="big-btn">End Turn (Space)</button>
+      </div>
+
+      <div id="hand" class="hand"></div>
+    </div>
+  </section>
+
+  <!-- End screen -->
+  <section id="end-screen" class="screen">
+    <div class="title-inner">
+      <h1 id="end-title">Victory!</h1>
+      <p id="end-sub" class="subtitle"></p>
+      <div id="end-stats" class="stats"></div>
+      <button id="again-btn" class="big-btn">Duel Again</button>
+    </div>
+  </section>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
